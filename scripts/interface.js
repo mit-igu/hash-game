@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             handleMove(square.target.id);
             setTimeout(() => {
                 if (gameOver) {
+                    alert(`Game Over. "${symbols[playerTurn].toUpperCase()}" wins`);
                     resetInterface();
                     resetGame();
-                    alert(`Game Over. "${symbols[playerTurn].toUpperCase()}" wins`);
                 }
             }, 10)
 
