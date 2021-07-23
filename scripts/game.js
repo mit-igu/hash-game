@@ -12,6 +12,9 @@ let playerTurn = 0;
 let symbols = ["o", "x"];
 //game status
 let gameOver = false;
+//scores
+let scoreX = 0;
+let scoreO = 0;
 
 function handleMove(position) {
     board[position] = symbols[playerTurn];
@@ -19,6 +22,12 @@ function handleMove(position) {
     if (!gameOver) {
         console.log(board, playerTurn);
         playerTurn = (playerTurn == 0) ? 1 : 0;
+    } else {
+        if (playerTurn == 0) {
+            scoreO++;
+        } else {
+            scoreX++;
+        }
     }
 
 }

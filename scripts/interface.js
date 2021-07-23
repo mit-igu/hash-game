@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(`Game Over. "${symbols[playerTurn].toUpperCase()}" wins`);
                     resetInterface();
                     resetGame();
+                    updateScore();
                 }
             }, 10)
 
@@ -31,6 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
         squares.forEach((square) => {
             square.innerHTML = "";
         })
+    }
+
+    let viewScoreX = document.querySelector('.scoreX');
+    let viewScoreO = document.querySelector('.scoreO');
+
+    function updateScore() {
+        viewScoreO.innerHTML = `${scoreO}`
+        viewScoreX.innerHTML = `${scoreX}`
     }
 
     document.querySelector('#reset').addEventListener('click', resetGame);
